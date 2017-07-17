@@ -26,14 +26,14 @@ We will create an application to Create, Read, Update, and Delete characters fro
   - It returns a JSON
 - **Verb:** POST, **Route:** "/characters"
   - It receives an object as a parameter, with the following format:
-    `{ name: string, occupacy: string, debt: boolean, weapon: string }`
+    `{ name: string, occupancy: string, debt: boolean, weapon: string }`
   - It returns the created character if there are no errors
   - It returns the wrong fields if there is some error
   - It returns JSON
 - **Verb:** PATCH/PUT, **Route:** "/characters/:id"
   - It receives the character id as a parameter (route)
   - It receives an object as a parameter, with the following format:
-    `{ name: string, occupacy: string, debt: boolean, weapon: string }`
+    `{ name: string, occupancy: string, debt: boolean, weapon: string }`
   - All the fields are optionals
   - It returns the updated character if there are no errors
   - It returns "Character not found" if there is no character with the indicated id
@@ -72,9 +72,9 @@ In your starter code folder you will find every file you need to finish the game
 
 ![](https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/upload_ec9874eab2a7ba6fb0d0d75699ca328a.png)
 
-We will construct a service to deal with the http calls. The only responsability of this service is to return the JSON result that comes from the API, or give the needed information to the API if we want to change it.
+We will construct a service to deal with the http calls. The only responsibility of this service is to return the JSON result that comes from the API, or give the needed information to the API if we want to change it.
 
-The funcionalities of the ApiService class are:
+The functionalities of the ApiService class are:
 
 - Get all the characters info from *[ih-api.herokuapp.com/characters](http://ih-api.herokuapp.com/characters)*
 - Get a single character info from *[ih-api.herokuapp.com/characters/:id](http://ih-api.herokuapp.com/characters/:id)*
@@ -110,7 +110,7 @@ We will bring to the application all the available characters in the API. In ord
 
 ![](https://s3-eu-west-1.amazonaws.com/ih-materials/uploads/upload_ebdfb7aa999d2078ba61a38df24367ca.png)
 
-Following the same idea as with fetching all, to retreive a single characters data we need to:
+Following the same idea as with fetching all, to retrieve a single characters data we need to:
 
 - Create a button (*Fetch one* in the image above) to, through an input field, get the id of an existing character.
 - Search that character in the API with *[ih-api.herokuapp.com/characters/:id](http://ih-api.herokuapp.com/characters/:id)*
@@ -127,7 +127,7 @@ To be able to delete a character from the API database, we need to:
    :::danger
    **Remember which HTTP verb you need in the request!!**
    :::
-- If the character is succesfully removed, change the background color of the button to green.
+- If the character is successfully removed, change the background color of the button to green.
 - If something went wrong, change the background color of the button to red.
 
 #### Create new character
@@ -141,7 +141,7 @@ We will create a form with 4 inputs, one for each character field: name(text), o
    :::danger
    **Remember which HTTP verb you need in the request!!**
    :::
-- If the character was succesfully created, set the background color of the button to green.
+- If the character was successfully created, set the background color of the button to green.
 - If something went wrong, change the background color of the button to red.
 
 #### Edit a character
@@ -155,7 +155,7 @@ We will create a form with 4 inputs, one for each field of the characters: name(
    :::danger
    **Remember which HTTP verb you need in the request!!**
    :::
-- If the character was succesfully updated, set the background color of the button to green.
+- If the character was successfully updated, set the background color of the button to green.
 - If something went wrong, change the background color of the button to red.
 
 That's all what we need to do!
