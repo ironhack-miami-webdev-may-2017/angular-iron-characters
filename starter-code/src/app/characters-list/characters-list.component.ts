@@ -35,7 +35,10 @@ export class CharactersListComponent implements OnInit {
 
   fetchOne (id) {
     this.characterApi.getOne(id).then((character)=> {
+      this.characters= [];
+      this.characters.push(character);
       console.log(character);
+
     })
 
   }
