@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
+
+//added for Promise to work
 import 'rxjs/add/operator/toPromise';
 
 @Injectable()
@@ -17,16 +19,33 @@ export class ApiService {
       .then(result => result.json());
   }
 
-  createNew () {
+  getOne (id) {
+    let endPoint = "/characters/" + id
+    return this.myHttp.get(this.baseUrl+endPoint)
+      .toPromise()
+      .then(result => result.json());
+  }
+
+  createNew (newCharacter) {
+    let endPoint = "/characters"
+    return this.myHttp.post("http://ih-api.herokuapp.com/characters", newCharacter)
+      .toPromise()
+      .then(result => result.json());
 
   }
 
-  editOne () {
-
+  editOne (id, updatedCharacter) {
+    let endPoint = "/characters/" +id
+    return this.myHttp.put(this.baseUrl+endPoint, updatedCharacter)
+      .toPromise()
+      .then(result => result.json());
   }
 
-  deleteOne () {
-    
+  deleteOne (id) {
+    let endPoint = "/characters/" + id
+    return this.myHttp.delete(this.baseUrl+endPoint)
+      .toPromise()
+      .then(result => result.json());
   }
 
 }

@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import {ApiService} from '../services/api.service'
+
+//import the service and import for Promise
+import 'rxjs/add/operator/toPromise';
 
 @Component({
   selector: 'app-characters-list',
@@ -16,20 +20,33 @@ export class CharactersListComponent implements OnInit {
   }
   ];
 
-  constructor() { }
+  constructor(private characterApi: ApiService) { }
 
   ngOnInit() {
   }
 
   fetchAll () {
+    this.characterApi.getList().then((charactersArray) => {
+      this.characters = charactersArray
+      console.log(charactersArray);
+    })
 
   }
 
   fetchOne (id) {
+    this.characterApi.getOne(id).then((character)=> {
+      this.characters= [];
+      this.characters.push(character);
+      console.log(character);
+
+    })
 
   }
 
   deleteOne (id) {
+    this.characterApi.deleteOne(id).then((character)=> {
+      console.log(character);
+    })
 
   }
 

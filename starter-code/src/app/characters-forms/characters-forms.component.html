@@ -4,47 +4,49 @@
     <form id="new-character-form" class="character-form">
       <div class="field">
         <label for="name">Name: </label>
-        <input type="text" name="name">
+        <input type="text" name="name" [(ngModel)]="characterToCreate.name">
       </div>
       <div class="field">
         <label for="occupation">Occupation: </label>
-        <input type="text" name="occupation">
+        <input type="text" name="occupation" [(ngModel)]="characterToCreate.occupation">
       </div>
       <div class="field">
         <label for="weapon">Weapon: </label>
-        <input type="text" name="weapon">
+        <input type="text" name="weapon" [(ngModel)]="characterToCreate.weapon">
       </div>
       <div class="field">
         <label for="debt">Has debt: </label>
-        <input name="debt" type="checkbox">
+        <input name="debt" type="checkbox" [(ngModel)]="characterToCreate.debt">
       </div>
-      <button id="send-data">Create</button>
+      <button (click)="createNew()" id="send-data">Create</button>
     </form>
   </section>
+
+  <!-- Edit Form -->
   <section class="form-container">
     <h2>Edit Character</h2>
     <form id="edit-character-form" class="character-form">
       <div class="field">
         <label for="id">ID: </label>
-        <input type="text" name="chr-id">
+        <input type="text" name="chr-id" [(ngModel)]="idToEdit">
       </div>
       <div class="field">
         <label for="name">Name: </label>
-        <input type="text" name="name">
+        <input type="text" name="name" [(ngModel)]="characterToEdit.name">
       </div>
       <div class="field">
         <label for="occupation">Occupation: </label>
-        <input type="text" name="occupation">
+        <input type="text" name="occupation" [(ngModel)]="characterToEdit.occupation">
       </div>
       <div class="field">
         <label for="weapon">Weapon: </label>
-        <input type="text" name="weapon">
+        <input type="text" name="weapon" [(ngModel)]="characterToEdit.weapon">
       </div>
       <div class="field">
         <label for="debt">Has debt: </label>
-        <input name="debt" type="checkbox">
+        <input name="debt" type="checkbox"[(ngModel)]="characterToEdit.debt">
       </div>
-      <button id="send-data">Update</button>
+      <button (click)="editOne(idToEdit)" id="send-data">Update</button>
     </form>
   </section>
 </section>

@@ -13,17 +13,17 @@
 
   <section class="operations">
     <div class="operation">
-      <button id="fetch-all">Fetch all</button>
+      <button (click)="fetchAll()" id="fetch-all">Fetch all</button>
     </div>
     <div class="operation">
       <label for="character-id">Search by ID: </label>
-      <input type="text" name="character-id">
-      <button id="fetch-one">Fetch one</button>
+      <input type="text" name="character-id" [(ngModel)]="idToFind">
+      <button (click)="fetchOne(idToFind)" id="fetch-one">Fetch one</button>
     </div>
     <div class="operation delete">
       <label for="character-id-delete">Delete by ID: </label>
-      <input type="text" name="character-id-delete">
-      <button id="delete-one">Delete one</button>
+      <input type="text" name="character-id-delete" [(ngModel)]="idToDelete">
+      <button (click)="deleteOne(idToDelete)" id="delete-one">Delete one</button>
     </div>
 
   </section>
